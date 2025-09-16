@@ -83,13 +83,14 @@
           </select>
         </div>
 
-        <div class="col-md-2">
-          <label for="inputSituacao" class="form-label">Situação</label>
-          <select id="inputSituacao" class="form-select">
-            <option selected>Ativo</option>
-            <option>Inativo</option>
-          </select>
+       <div class="col-md-2">
+        <label for="inputSituacao" class="form-label">Situação</label>
+       <select id="inputSituacao" class="form-select">
+          <option value="Ativo" selected>Ativo</option>
+          <option value="Inativo">Inativo</option>
+        </select>
         </div>
+
 
         <!-- CPF com IMask -->
         <div class="col-md-2">
@@ -170,6 +171,24 @@
       }
     }
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const select = document.getElementById('inputSituacao');
+
+  function atualizaCor() {
+    select.classList.remove('bg-success','bg-danger','text-white');
+    if (select.value === 'Ativo') {
+      select.classList.add('bg-success','text-white'); // verde
+    } else if (select.value === 'Inativo') {
+      select.classList.add('bg-danger','text-white'); // vermelho
+    }
+  }
+
+  select.addEventListener('change', atualizaCor);
+  atualizaCor(); // aplica cor inicial
+});
+</script>
 
   <!-- IMask -->
   <script src="https://unpkg.com/imask"></script>
