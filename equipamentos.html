@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <title>Projeto Bennesby</title>
+</head>
+<body class="bg-gradient-azul p-5">
+  <header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      
+  <img src="./assets/imagens/LOGO BENNESBY SEM FUNDO.png" alt="Logo" style="height:60px; width:auto;">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Colaborador</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/equipamentos.html">Equipamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  </header>
+
+  <main>
+
+    <!-- Input Group com Bootstrap -->
+    <div class="bg-light p-5 border rounded-3 m-5">
+      <form class="row g-3">
+        
+        <div class="col-md-4">
+          <label for="inputName" class="form-label">Nome</label>
+          <input type="text" class="form-control" placeholder="Digite o nome completo" aria-label="First name">
+        </div>
+
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">Unidade</label>
+          <select id="inputState" class="form-select">
+            <option selected>U20</option>
+            <option>U18</option>
+            <option>U17</option>
+            <option>U09</option>
+            <option>U08</option>
+            <option>U04</option>
+            <option>T97</option>
+            <option>T95</option>
+            <option>Bajaj - SJ</option>
+            <option>Bajaj - CG</option>
+            <option>AutoShop - SJ</option>
+            <option>AutoCenter - SJ</option>
+            <option>LocaBenn</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="inputSetor" class="form-label">Setor</label>
+          <select id="inputSetor" class="form-select">
+            <option selected>VENDAS DE NOVOS</option>
+            <option>VENDA SEMINOVOS</option>
+            <option>VENDA DIRETAS</option>
+            <option>RECEPÇÃO</option>
+            <option>F&I</option>
+            <option>CRM</option>
+            <option>CAA</option>
+            <option>CONSÓRCIO</option>
+            <option>SEGUROS</option>
+            <option>CONTROLADORIA</option>
+            <option>PEÇAS</option>
+            <option>CAIXA</option>
+            <option>OFICINA</option>
+            <option>RH</option>
+            <option>TI</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <label for="inputFuncao" class="form-label">Função</label>
+          <select id="inputFuncao" class="form-select">
+            <option selected>VENDEDOR</option>
+            <option>GERENCIA</option>
+            <option>RECEPÇÃO OFICINA</option>
+            <option>RECEPÇÃO VENDAS</option>
+            <option>U08</option>
+            <option>U04</option>
+            <option>T97</option>
+            <option>T95</option>
+            <option>Bajaj - SJ</option>
+            <option>Bajaj - CG</option>
+            <option>AutoShop - SJ</option>
+            <option>AutoCenter - SJ</option>
+            <option>LocaBenn</option>
+          </select>
+        </div>
+
+       <div class="col-md-2">
+        <label for="inputSituacao" class="form-label">Situação</label>
+       <select id="inputSituacao" class="form-select">
+          <option value="Ativo" selected>Ativo</option>
+          <option value="Inativo">Inativo</option>
+        </select>
+        </div>
+
+
+        <!-- CPF com IMask -->
+        <div class="col-md-2">
+          <label for="inputCPF2" class="form-label">CPF</label>
+          <input type="text" class="form-control" 
+                 placeholder="Somente digitos" 
+                 id="inputCPF2" 
+                 maxlength="14" 
+                 inputmode="numeric">
+        </div>
+
+        <div class="col-md-1">
+          <label for="inputramal1" class="form-label">Ramal</label>
+          <input type="text" class="form-control" placeholder="0000" id="inputramal1">
+        </div>
+
+        <div class="col-md-3">
+          <label for="inputEmail3" class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="example@bennesby.com.br" id="inputEmail3">
+        </div>
+
+        <!-- Foto Colaborador -->
+        <div class="col-md-2  d-flex ms-auto" style="max-width:220px;">
+          <div class="border p-3 rounded text-center bg-white shadow-sm" style="width: 220px;">
+            <label class="form-label d-block">Foto colaborador</label>
+            <img
+              id="imagePreview"
+              src="#"
+              alt="Pré-visualização da imagem"
+              style="width: 180px; height: 180px; object-fit: cover; display: none;"
+              class="img-thumbnail mb-2 mx-auto d-block"
+            />
+            <input
+              class="form-control"
+              type="file"
+              id="inputGroupFile04"
+              accept="image/*"
+              onchange="previewImage(event)"
+            />
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Confirmar
+            </label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+    <!-- FIM Input Group com Bootstrap -->
+  </main>
+
+  <footer></footer>
+
+  <!-- Script para visualizar imagem -->
+  <script>
+    function previewImage(event) {
+      const input = event.target;
+      const preview = document.getElementById('imagePreview');
+
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const select = document.getElementById('inputSituacao');
+
+  function atualizaCor() {
+    select.classList.remove('bg-success','bg-danger','text-white');
+    if (select.value === 'Ativo') {
+      select.classList.add('bg-success','text-white'); // verde
+    } else if (select.value === 'Inativo') {
+      select.classList.add('bg-danger','text-white'); // vermelho
+    }
+  }
+
+  select.addEventListener('change', atualizaCor);
+  atualizaCor(); // aplica cor inicial
+});
+</script>
+
+  <!-- IMask -->
+  <script src="https://unpkg.com/imask"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cpfInput = document.getElementById('inputCPF2');
+      IMask(cpfInput, { mask: '000.000.000-00' });
+    });
+  </script>
+
+</body>
+</html>

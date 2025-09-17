@@ -3,30 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <script src="/assets/js/bootstrap.min.js"></script>
   <title>Projeto Bennesby</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <!-- Flatpickr JS + localização PT-BR -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+  
+  <!-- IMask para máscaras de inputs -->
+  <script src="https://unpkg.com/imask"></script>
 </head>
-<body class="bg-gradient-azul text-white">
-  <header></header>
+<body class="bg-gradient-azul p-5">
 
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/imagens/LOGO BENNESBY SEM FUNDO.png" alt="Logo" style="height:60px; width:auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Colaborador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/equipamentos.html">Equipamentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search"/>
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
   <main>
-    <div class="py-1">
-      <h3 class="text-left m-5">projeto</h3>
-    </div>
-
-    <!-- Input Group com Bootstrap -->
+    <!-- Formulário principal -->
     <div class="bg-light p-5 border rounded-3 m-5">
       <form class="row g-3">
-        
-        <div class="col-md-4">
-          <label for="inputName" class="form-label">Nome</label>
-          <input type="text" class="form-control" placeholder="Digite o nome completo" aria-label="First name">
+
+        <!-- Título Dados do Colaborador -->
+        <div class="col-12">
+          <h1 class="display-6">Dados do colaborador</h1>
         </div>
 
+        <!-- Nome -->
+        <div class="col-md-4">
+          <label for="inputName" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="inputName" placeholder="Digite o nome completo" aria-label="First name">
+        </div>
+
+        <!-- Unidade -->
         <div class="col-md-2">
-          <label for="inputState" class="form-label">Unidade</label>
-          <select id="inputState" class="form-select">
+          <label for="inputUnidade" class="form-label">Unidade</label>
+          <select id="inputUnidade" class="form-select">
             <option selected>U20</option>
             <option>U18</option>
             <option>U17</option>
@@ -43,6 +89,7 @@
           </select>
         </div>
 
+        <!-- Setor -->
         <div class="col-md-2">
           <label for="inputSetor" class="form-label">Setor</label>
           <select id="inputSetor" class="form-select">
@@ -64,6 +111,7 @@
           </select>
         </div>
 
+        <!-- Função -->
         <div class="col-md-2">
           <label for="inputFuncao" class="form-label">Função</label>
           <select id="inputFuncao" class="form-select">
@@ -83,120 +131,363 @@
           </select>
         </div>
 
-       <div class="col-md-2">
-        <label for="inputSituacao" class="form-label">Situação</label>
-       <select id="inputSituacao" class="form-select">
-          <option value="Ativo" selected>Ativo</option>
-          <option value="Inativo">Inativo</option>
-        </select>
+        <!-- Situação -->
+        <div class="col-md-2">
+          <label for="inputSituacao" class="form-label">Situação</label>
+          <select id="inputSituacao" class="form-select">
+            <option value="Ativo" selected>Ativo</option>
+            <option value="Inativo">Inativo</option>
+          </select>
         </div>
 
-
-        <!-- CPF com IMask -->
+        <!-- CPF -->
         <div class="col-md-2">
           <label for="inputCPF2" class="form-label">CPF</label>
-          <input type="text" class="form-control" 
-                 placeholder="Somente digitos" 
-                 id="inputCPF2" 
-                 maxlength="14" 
-                 inputmode="numeric">
+          <input type="text" class="form-control" placeholder="Somente digitos" id="inputCPF2" maxlength="14" inputmode="numeric">
         </div>
 
+        <!-- Ramal -->
         <div class="col-md-1">
-          <label for="inputramal1" class="form-label">Ramal</label>
-          <input type="text" class="form-control" placeholder="0000" id="inputramal1">
+          <label for="inputRamal" class="form-label">Ramal</label>
+          <input type="text" class="form-control" placeholder="0000" id="inputRamal">
         </div>
 
+        <!-- Email -->
         <div class="col-md-3">
           <label for="inputEmail3" class="form-label">Email</label>
           <input type="email" class="form-control" placeholder="example@bennesby.com.br" id="inputEmail3">
         </div>
 
         <!-- Foto Colaborador -->
-        <div class="col-md-2  d-flex ms-auto" style="max-width:220px;">
+        <div class="col-md-2 ms-auto" style="max-width:220px;">
           <div class="border p-3 rounded text-center bg-white shadow-sm" style="width: 220px;">
             <label class="form-label d-block">Foto colaborador</label>
-            <img
-              id="imagePreview"
-              src="#"
-              alt="Pré-visualização da imagem"
-              style="width: 180px; height: 180px; object-fit: cover; display: none;"
-              class="img-thumbnail mb-2 mx-auto d-block"
-            />
-            <input
-              class="form-control"
-              type="file"
-              id="inputGroupFile04"
-              accept="image/*"
-              onchange="previewImage(event)"
-            />
+            <img id="imagePreview" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" 
+                alt="Pré-visualização da imagem"
+                style="width: 180px; height: 180px; object-fit: cover; display: none;"
+                class="img-thumbnail mb-2 mx-auto d-block" />
+            <input class="form-control" type="file" id="inputGroupFile04" accept="image/*" onchange="previewImage(event)" />
           </div>
         </div>
 
+        <!-- Equipamentos -->
+        <div class="col-12">
+          <h2 class="display-6">Equipamentos</h2>
+        </div>
 
+        <!-- Campos Equipamentos (Computador, Fabricante, Modelo, Serial, HostName) -->
+        <div class="col-md-2">
+          <label for="inputComputador" class="form-label">Computador</label>
+          <input type="text" class="form-control" placeholder="DESKTOP ou NOTEBOOK" aria-label="computer" id="inputComputador">
+        </div>
+        <div class="col-md-2">
+          <label for="inputFabricante" class="form-label">Fabricante</label>
+          <input type="text" class="form-control" placeholder="DELL / POSITIVO / ETC" aria-label="fabricante" id="inputFabricante">
+        </div>
+        <div class="col-md-2">
+          <label for="inputModelo" class="form-label">Modelo</label>
+          <input type="text" class="form-control" placeholder="Modelo do equipamento" aria-label="model" id="inputModelo">
+        </div>
+        <div class="col-md-3">
+          <label for="inputSerial" class="form-label">Serial</label>
+          <input type="text" class="form-control" placeholder="Serial Number" aria-label="Serial" id="inputSerial">
+        </div>
+        <div class="col-md-2">
+          <label for="inputHostName" class="form-label">HostName</label>
+          <input type="text" class="form-control" placeholder="U0N-NTI-00N" id="inputHostName">
+        </div>
+
+        <!-- Revenda do contrato -->
+        <div class="col-md-2">
+          <label for="inputRevenda" class="form-label">Revenda do contrato</label>
+          <select id="inputRevenda" class="form-select">
+            <option selected>U20</option>
+            <option>U18</option>
+            <option>U17</option>
+            <option>U09</option>
+            <option>U08</option>
+            <option>U04</option>
+            <option>T97</option>
+            <option>T95</option>
+            <option>Bajaj - SJ</option>
+            <option>Bajaj - CG</option>
+            <option>AutoShop - SJ</option>
+            <option>AutoCenter - SJ</option>
+            <option>LocaBenn</option>
+          </select>
+        </div>
+
+        <!-- Contrato -->
+        <div class="col-md-2">
+          <label for="inputContrato" class="form-label">Contrato</label>
+          <input type="text" class="form-control" placeholder="Numero do Contrato" id="inputContrato">
+        </div>
+
+        <!-- Data Contrato -->
+        <div class="col-md-2">
+          <label for="datepicker" class="form-label">Data do Contrato</label>
+          <input type="text" id="datepicker" class="form-control" placeholder="dd/mm/aaaa">
+        </div>
+
+        <!-- PRAZO Contrato -->
+        <div class="col-md-2">
+          <label for="inputPrazo" class="form-label">Prazo do Contrato</label>
+          <input type="number" id="inputPrazo" class="form-control" placeholder="Em Meses">
+        </div>
+
+        <!-- Parceiro -->
+        <div class="col-md-2">
+          <label for="inputParceiroContrato" class="form-label">Parceiro</label>
+          <input type="text" class="form-control" placeholder="POSITIVO / VIVO TECH" id="inputParceiroContrato">
+        </div>
+
+        <!-- Telefonia Corporativa -->
+        <div class="col-12">
+          <h3 class="display-6">Telefonia Corporativa</h3>
+        </div>
+
+        <div class="col-md-2">
+          <label for="inputFabricante" class="form-label">Fabricante</label>
+          <input type="text" class="form-control" placeholder="SAMSUNG / APPLE / ETC" aria-label="fabricante" id="inputFabricante">
+        </div>
+        <div class="col-md-2">
+          <label for="inputModelo" class="form-label">Modelo</label>
+          <input type="text" class="form-control" placeholder="Modelo do equipamento" aria-label="model" id="inputModelo">
+        </div>
+        <div class="col-md-2">
+          <label for="inputIMEI" class="form-label">IMEI</label>
+          <input type="text" class="form-control" placeholder="IMEI" aria-label="imei" id="inputIMEI">
+        </div>
+        <div class="col-md-2">
+          <label for="inputOperadora" class="form-label">Operadora</label>
+          <select id="inputOperadora" class="form-select">
+            <option selected>Vivo</option>
+            <option>CLARO</option>
+            <option>TIM</option>
+            <option>OI</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputNumeroChip" class="form-label">Número do Chip</label>
+          <input type="text" class="form-control" placeholder="Digite o número do chip" id="inputNumeroChip">
+        </div>
+
+        <!-- Termos / Responsabilidade -->
+        <div class="col-12">
+          <h4 class="display-6">Termos</h4>
+        </div>
+
+
+        <div class="p-2 border rounded shadow-sm" style="max-width: 600px;">
+          <p class="h5">Responsabilidade</p>
+
+          <!-- Input Equipamento -->
+          <div class="mb-3">
+            <label for="inputTermosEq" class="form-label">Equipamento</label>
+            <input type="text" class="form-control" placeholder="Notebook / Telefone / ETC" id="inputTermosEq">
+          </div>
+
+          <!-- Input Assinatura -->
+          <div class="mb-3">
+            <label for="datepickerTermos" class="form-label">Assinado em:</label>
+            <input type="text" id="datepickerTermos" class="form-control" placeholder="dd/mm/aaaa">
+          </div>
+
+            <!-- Fotos lado a lado -->
+            <div class="d-flex justify-content-start gap-3 mt-3">
+
+              <!-- Foto Equipamento -->
+              <div class="border p-2 rounded text-center bg-white shadow-sm" style="width: 150px; margin: auto;">
+                <label class="form-label d-block">Foto Equipamento</label>
+                <img id="imagePreviewEquip" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+                    alt="Pré-visualização do equipamento"
+                    style="width: 120px; height: 120px; object-fit: cover; display: none;"
+                    class="img-thumbnail mb-2 mx-auto d-block" />
+                <input class="form-control" type="file" id="inputGroupFileEquip" accept="image/*" onchange="previewEquip(event)" />
+              </div>
+
+              <!-- Foto Termos -->
+              <div class="border p-2 rounded text-center bg-white shadow-sm" style="width: 150px;  margin: auto;">
+                <label class="form-label d-block">Foto Termos</label>
+                <img id="imagePreviewTermos" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+                    alt="Pré-visualização dos termos"
+                    style="width: 120px; height: 120px; object-fit: cover; display: none;"
+                    class="img-thumbnail mb-2 mx-auto d-block" />
+                <input class="form-control" type="file" id="inputGroupFileTermos" accept="image/*" onchange="previewTermos(event)" />
+              </div>
+            </div>      
+        </div>
+        
+        <!-- DEVOLUÇÃO -->
+<div class="p-2 border rounded shadow-sm" style="max-width: 600px; margin-left: auto;">
+  <p class="h5">Devolução</p>
+
+  <!-- Input Equipamento -->
+  <div class="mb-3">
+    <label for="inputTermosEqDev" class="form-label">Equipamento</label>
+    <input type="text" class="form-control" placeholder="Notebook / Telefone / ETC" id="inputTermosEqDev">
+  </div>
+
+  <!-- Input Assinatura -->
+  <div class="mb-3">
+    <label for="datepickerTermosDev" class="form-label">Assinado em:</label>
+    <input type="text" id="datepickerTermosDev" class="form-control" placeholder="dd/mm/aaaa">
+  </div>
+
+  <!-- Fotos lado a lado -->
+  <div class="d-flex justify-content-start gap-3 mt-3">
+
+    <!-- Foto Equipamento Devolução -->
+    <div class="border p-2 rounded text-center bg-white shadow-sm" style="width: 150px; margin: auto;">
+      <label class="form-label d-block">Foto Equipamento</label>
+      <img id="imagePreviewEquipDev" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+           alt="Pré-visualização do equipamento"
+           style="width: 120px; height: 120px; object-fit: cover; display: none;"
+           class="img-thumbnail mb-2 mx-auto d-block" />
+      <input class="form-control" type="file" id="inputGroupFileEquipDev" accept="image/*" onchange="previewEquipDev(event)" />
+    </div>
+
+    <!-- Foto Termos Devolução -->
+    <div class="border p-2 rounded text-center bg-white shadow-sm" style="width: 150px; margin: auto;">
+      <label class="form-label d-block">Foto Termos</label>
+      <img id="imagePreviewTermosDev" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+           alt="Pré-visualização dos termos"
+           style="width: 120px; height: 120px; object-fit: cover; display: none;"
+           class="img-thumbnail mb-2 mx-auto d-block" />
+      <input class="form-control" type="file" id="inputGroupFileTermosDev" accept="image/*" onchange="previewTermosDev(event)" />
+    </div>
+
+      </div>
+    </div>
+          
+        <!-- Confirmar -->
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Confirmar
-            </label>
+            <label class="form-check-label" for="gridCheck">Confirmar</label>
           </div>
         </div>
 
+        <!-- Salvar -->
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
+
       </form>
     </div>
-    <!-- FIM Input Group com Bootstrap -->
   </main>
 
+  <!-- Footer -->
   <footer></footer>
 
-  <!-- Script para visualizar imagem -->
-  <script>
-    function previewImage(event) {
-      const input = event.target;
-      const preview = document.getElementById('imagePreview');
-
-      if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-          preview.src = e.target.result;
-          preview.style.display = 'block';
-        }
-
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-  </script>
-
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-  const select = document.getElementById('inputSituacao');
 
-  function atualizaCor() {
-    select.classList.remove('bg-success','bg-danger','text-white');
-    if (select.value === 'Ativo') {
-      select.classList.add('bg-success','text-white'); // verde
-    } else if (select.value === 'Inativo') {
-      select.classList.add('bg-danger','text-white'); // vermelho
+  // Preview de imagem do colaborador
+  function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('imagePreview');
+    if(input.files && input.files[0]){
+      const reader = new FileReader();
+      reader.onload = function(e){
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      }
+      reader.readAsDataURL(input.files[0]);
     }
   }
+  window.previewImage = previewImage;
 
-  select.addEventListener('change', atualizaCor);
-  atualizaCor(); // aplica cor inicial
+  // Preview de imagem do equipamento
+function previewEquip(event) {
+  const input = event.target;
+  const preview = document.getElementById('imagePreviewEquip');
+  if(input.files && input.files[0]){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+window.previewEquip = previewEquip;
+
+// Preview de imagem dos termos
+function previewTermos(event) {
+  const input = event.target;
+  const preview = document.getElementById('imagePreviewTermos');
+  if(input.files && input.files[0]){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+window.previewTermos = previewTermos;
+
+// Preview de imagem do equipamento (Devolução)
+function previewEquipDev(event) {
+  const input = event.target;
+  const preview = document.getElementById('imagePreviewEquipDev');
+  if(input.files && input.files[0]){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+window.previewEquipDev = previewEquipDev;
+
+// Preview de imagem dos termos (Devolução)
+function previewTermosDev(event) {
+  const input = event.target;
+  const preview = document.getElementById('imagePreviewTermosDev');
+  if(input.files && input.files[0]){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+window.previewTermosDev = previewTermosDev;
+
+// Flatpickr para data de devolução
+flatpickr("#datepickerTermosDev", { locale: "pt", dateFormat: "d/m/Y", allowInput: true });
+
+  // IMask CPF
+  const cpfInput = document.getElementById('inputCPF2');
+  IMask(cpfInput, { mask: '000.000.000-00' });
+
+  // IMask Número do CHIP
+  const chipInput = document.getElementById('inputNumeroChip');
+  if(chipInput){
+    IMask(chipInput, { mask: '+{55} 00 00000-0000' });
+  }
+
+  // HostName em maiúsculas
+  const hostInput = document.getElementById('inputHostName');
+  hostInput.addEventListener("input", () => hostInput.value = hostInput.value.toUpperCase());
+
+  // Situação (Ativo/Inativo) - cores dinâmicas
+  const selectSituacao = document.getElementById('inputSituacao');
+  function atualizaCor() {
+    selectSituacao.classList.remove('bg-success','bg-danger','text-white');
+    if(selectSituacao.value === 'Ativo') selectSituacao.classList.add('bg-success','text-white');
+    else if(selectSituacao.value === 'Inativo') selectSituacao.classList.add('bg-danger','text-white');
+  }
+  selectSituacao.addEventListener('change', atualizaCor);
+  atualizaCor();
+
+  // Flatpickr para datas
+  flatpickr("#datepicker", { locale: "pt", dateFormat: "d/m/Y", allowInput: true });
+  flatpickr("#datepickerTermos", { locale: "pt", dateFormat: "d/m/Y", allowInput: true });
+
 });
 </script>
-
-  <!-- IMask -->
-  <script src="https://unpkg.com/imask"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cpfInput = document.getElementById('inputCPF2');
-      IMask(cpfInput, { mask: '000.000.000-00' });
-    });
-  </script>
-</body>
-</html>
