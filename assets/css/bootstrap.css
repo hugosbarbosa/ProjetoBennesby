@@ -4,6 +4,13 @@
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+.bg-gradient-azul {
+      background: #020024;
+      background: linear-gradient(339deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 24%, rgba(0,212,255,1) 88%);
+      min-height: 100vh;
+}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
