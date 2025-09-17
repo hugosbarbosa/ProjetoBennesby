@@ -61,7 +61,17 @@
         <!-- Título Dados do Colaborador -->
         <div class="col-12">
           <h1 class="display-6">Dados do colaborador</h1>
+
+                  <!-- Situação -->
+        <div class="col-md-2">
+          <label for="inputSituacao" class="form-label">Situação</label>
+          <select id="inputSituacao" class="form-select">
+            <option value="Ativo" selected>Ativo</option>
+            <option value="Inativo">Inativo</option>
+          </select>
         </div>
+        </div>
+
 
         <!-- Nome -->
         <div class="col-md-4">
@@ -131,14 +141,7 @@
           </select>
         </div>
 
-        <!-- Situação -->
-        <div class="col-md-2">
-          <label for="inputSituacao" class="form-label">Situação</label>
-          <select id="inputSituacao" class="form-select">
-            <option value="Ativo" selected>Ativo</option>
-            <option value="Inativo">Inativo</option>
-          </select>
-        </div>
+        
 
         <!-- CPF -->
         <div class="col-md-2">
@@ -146,16 +149,17 @@
           <input type="text" class="form-control" placeholder="Somente digitos" id="inputCPF2" maxlength="14" inputmode="numeric">
         </div>
 
-        <!-- Ramal -->
-        <div class="col-md-1">
-          <label for="inputRamal" class="form-label">Ramal</label>
-          <input type="text" class="form-control" placeholder="0000" id="inputRamal">
-        </div>
 
         <!-- Email -->
         <div class="col-md-3">
           <label for="inputEmail3" class="form-label">Email</label>
           <input type="email" class="form-control" placeholder="example@bennesby.com.br" id="inputEmail3">
+        </div>
+
+        <!-- Ramal -->
+        <div class="col-md-1">
+          <label for="inputRamal" class="form-label">Ramal</label>
+          <input type="text" class="form-control" placeholder="0000" id="inputRamal">
         </div>
 
         <!-- Foto Colaborador -->
