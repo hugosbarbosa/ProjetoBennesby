@@ -6,7 +6,7 @@
   <title>Projeto Bennesby</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
   
   <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -182,11 +182,23 @@
         <!-- Campos Equipamentos (Computador, Fabricante, Modelo, Serial, HostName) -->
         <div class="col-md-2">
           <label for="inputComputador" class="form-label">Computador</label>
-          <input type="text" class="form-control" placeholder="DESKTOP ou NOTEBOOK" aria-label="computer" id="inputComputador">
+          <select id="inputComputador" class="form-select">
+            <option>Desktop</option>
+            <option>Notebook</option>
+          </select>
         </div>
         <div class="col-md-2">
           <label for="inputFabricante" class="form-label">Fabricante</label>
-          <input type="text" class="form-control" placeholder="DELL / POSITIVO / ETC" aria-label="fabricante" id="inputFabricante">
+          <select id="inputFabricante" class="form-select">
+            <option>Positivo</option>
+            <option>Dell</option>
+            <option>Generico</option>
+            <option>Samsung</option>
+            <option>Acer</option>
+            <option>Asus</option>
+            <option>Lenovo</option>
+
+          </select>
         </div>
         <div class="col-md-2">
           <label for="inputModelo" class="form-label">Modelo</label>
@@ -240,9 +252,12 @@
         </div>
 
         <!-- Parceiro -->
-        <div class="col-md-2">
-          <label for="inputParceiroContrato" class="form-label">Parceiro</label>
-          <input type="text" class="form-control" placeholder="POSITIVO / VIVO TECH" id="inputParceiroContrato">
+          <div class="col-md-2">
+          <label for="inputParceiro" class="form-label">Parceiro</label>
+          <select id="inputParceiro" class="form-select">
+            <option>Positivo</option>
+            <option>VivoTech</option>
+          </select>
         </div>
 
         <!-- Telefonia Corporativa -->
