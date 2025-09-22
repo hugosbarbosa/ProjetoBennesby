@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto Bennesby</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <script src="/assets/js/bootstrap.min.js"></script>
   
   
   <!-- Flatpickr CSS -->
@@ -22,41 +23,41 @@
 <body class="bg-gradient-azul p-5">
 
   <!-- Header / Navbar -->
-  <header>
+ <header>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/imagens/LOGO BENNESBY SEM FUNDO.png" alt="Logo" style="height:60px; width:auto;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Colaborador</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/equipamentos.html">Equipamentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      
+  <img src="./assets/imagens/LOGO BENNESBY SEM FUNDO.png" alt="Logo" style="height:60px; width:auto;">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./index.html">Colaborador</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/equipamentos.html">Equipamentos</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
           </form>
-        </div>
-      </div>
-    </nav>
+    </div>
+  </div>
+</nav>
+
   </header>
 
   <!-- Main Content -->
   <main>
     <!-- Formulário principal -->
-    <div class="bg-light p-5 border rounded-3 m-5">
+    <div class="row col-lg-11 col-md-8 col-sm-12 bg-white p-5 border rounded-3 m-5">
       <form class="row g-3">
 
         <!-- Título Dados do Colaborador -->
@@ -64,7 +65,7 @@
           <h1 class="display-6">Dados do colaborador</h1>
 
                   <!-- Situação -->
-        <div class="col-md-2">
+        <div class="col-lg-3">
           <label for="inputSituacao" class="form-label">Situação</label>
           <select id="inputSituacao" class="form-select">
             <option value="Ativo" selected>Ativo</option>
