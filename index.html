@@ -122,22 +122,15 @@
                           inputmode="numeric"
                         />
                       </div>
-                      <div class="col-md-6">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="example@bennesby.com.br"
-                          id="inputEmail"
-                        />
-                      </div>
                       <div class="col-md-3">
-                        <label for="inputRamal" class="form-label">Ramal</label>
+                        <label for="datepickerNascimento" class="form-label"
+                          >Data de Nascimento</label
+                        >
                         <input
                           type="text"
-                          class="form-control"
-                          placeholder="0000"
-                          id="inputRamal"
+                          id="datepickerNascimento"
+                          class="form-control datepicker"
+                          placeholder="dd/mm/aaaa"
                         />
                       </div>
                       <div class="col-md-4">
@@ -145,7 +138,8 @@
                           >Unidade</label
                         >
                         <select id="inputUnidade" class="form-select">
-                          <option selected>U20</option>
+                          <option selected></option>
+                          <option>U20</option>
                           <option>U18</option>
                           <option>U17</option>
                           <option>U09</option>
@@ -162,20 +156,21 @@
                       </div>
                       <div class="col-md-4">
                         <label for="inputSetor" class="form-label">Setor</label>
-                        <select id="inputSetor" class="form-select">
-                          <option selected>VENDAS DE NOVOS</option>
+                        <select id="inputSetor" class="form-select" required>
+                          <option selected></option>
+                          <option >VENDAS DE NOVOS</option>
                           <option>VENDA SEMINOVOS</option>
-                          <option>VENDA DIRETAS</option>
+                          <option>CONTROLADORIA</option>
+                          <option>VENDA DIRETA</option>
+                          <option>CONSÓRCIO</option>
                           <option>RECEPÇÃO</option>
+                          <option>SEGUROS</option>
+                          <option>OFICINA</option>
+                          <option>PEÇAS</option>
+                          <option>CAIXA</option>
                           <option>F&I</option>
                           <option>CRM</option>
                           <option>CAA</option>
-                          <option>CONSÓRCIO</option>
-                          <option>SEGUROS</option>
-                          <option>CONTROLADORIA</option>
-                          <option>PEÇAS</option>
-                          <option>CAIXA</option>
-                          <option>OFICINA</option>
                           <option>RH</option>
                           <option>TI</option>
                         </select>
@@ -185,7 +180,8 @@
                           >Função</label
                         >
                         <select id="inputFuncao" class="form-select">
-                          <option selected>VENDEDOR</option>
+                          <option selected></option>
+                          <option>VENDEDOR</option>
                           <option>GERENCIA</option>
                           <option>RECEPÇÃO OFICINA</option>
                           <option>RECEPÇÃO VENDAS</option>
@@ -247,7 +243,7 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="teste.bennesby"
+                          placeholder="TESTE.1234"
                           id="inputAD"
                         />
                       </div>
@@ -280,6 +276,7 @@
                 <label for="inputComputador" class="form-label"
                   >Computador</label
                 ><select id="inputComputador" class="form-select">
+                  <option selected></option>
                   <option>Desktop</option>
                   <option>Notebook</option>
                 </select>
@@ -288,6 +285,7 @@
                 <label for="inputFabricantePC" class="form-label"
                   >Fabricante</label
                 ><select id="inputFabricantePC" class="form-select">
+                  <option selected></option>
                   <option>Positivo</option>
                   <option>Dell</option>
                   <option>Generico</option>
@@ -328,7 +326,8 @@
                 <label for="inputRevenda" class="form-label"
                   >Revenda do contrato</label
                 ><select id="inputRevenda" class="form-select">
-                  <option selected>U20</option>
+                  <option selected></option>
+                  <option>U20</option>
                   <option>U18</option>
                   <option>U17</option>
                   <option>U09</option>
@@ -374,6 +373,7 @@
               <div class="col-md-2">
                 <label for="inputParceiro" class="form-label">Parceiro</label
                 ><select id="inputParceiro" class="form-select">
+                  <option selected></option>
                   <option>Positivo</option>
                   <option>VivoTech</option>
                 </select>
@@ -385,6 +385,7 @@
                 <div class="col-md-2">
                 <label for="inputFabricanteCelular" class="form-label">Fabricante</label>
                 <select id="inputFabricanteCelular" class="form-select">
+                  <option selected></option>
                   <option>Samsung</option>
                   <option>Apple</option>
                   <option>Acer</option>
@@ -454,7 +455,8 @@
                               <div class="mb-3">
                                   <label for="inputTermosEq-1" class="form-label">Equipamento</label>
                                   <select id="inputTermosEq-1" name="termos[1][equipamento]" class="form-select">
-                                      <option selected>Desktop</option>
+                                    <option selected></option>
+                                      <option >Desktop</option>
                                       <option>Notebook</option>
                                       <option>Telefone</option>
                                       <option>Outros</option>
@@ -484,7 +486,8 @@
                               <div class="mb-3">
                                   <label for="inputTermosEqDev-1" class="form-label">Equipamento</label>
                                   <select id="inputTermosEqDev-1" name="termos[1][equipamento_devolucao]" class="form-select">
-                                      <option selected>Desktop</option>
+                                    <option selected></option>
+                                      <option >Desktop</option>
                                       <option>Notebook</option>
                                       <option>Telefone</option>
                                       <option>Outros</option>
