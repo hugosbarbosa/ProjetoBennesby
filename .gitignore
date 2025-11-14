@@ -1,1 +1,5 @@
-node_modules/
+# Ignora os módulos do Frontend (da raiz)
+/node_modules
+
+# Ignora os módulos do Backend (de dentro da api)
+/bennesby-api/node_modules

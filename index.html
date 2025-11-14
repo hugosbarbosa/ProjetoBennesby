@@ -5,28 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Bennesby</title>
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
-
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-    
-
   </head>
 
   <body class="bg-gradient-azul py-4 px-lg-5">
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/index.html">
             <img
-              src="./assets/imagens/LOGO BENNESBY SEM FUNDO.png"
+              src="/assets/imagens/LOGO BENNESBY SEM FUNDO.png"
               alt="Logo"
               style="height: 60px; width: auto"
             />
@@ -48,17 +44,17 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="./index.html"
+                  href="/index.html"
                   >Cadastros</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/equipamentos.html">Equipamentos</a>
               </li>
-                <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="/fornecedores.html">Fornecedores</a>
               </li>
-                <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="/pesquisa.html">Pesquisas</a>
               </li>
             </ul>
@@ -79,16 +75,22 @@
     </header>
 
     <main class="mt-sm-6">
-      <div class="container-fluid col-lg-10 col-md-12 col-sm-12 bg-white p-4 p-md-5 border rounded-3 shadow-lg">
+      <div
+        class="container-fluid col-lg-10 col-md-12 col-sm-12 bg-white p-4 p-md-5 border rounded-3 shadow-lg"
+      >
         <div class="row">
           <div class="col-12">
+            <div id="alert-placeholder"></div>
+
             <form class="row g-3">
               <div
                 class="col-12 d-flex justify-content-between align-items-center mb-3"
               >
                 <h1 class="display-6 mt-5">Dados do colaborador</h1>
                 <div class="col-lg-3 col-md-4 col-sm-5">
-                  <label for="inputSituacao" class="form-label mt-5">Situação</label>
+                  <label for="inputSituacao" class="form-label mt-5"
+                    >Situação</label
+                  >
                   <select id="inputSituacao" class="form-select">
                     <option value="Ativo" selected>Ativo</option>
                     <option value="Inativo">Inativo</option>
@@ -156,10 +158,10 @@
                         <label for="inputSetor" class="form-label">Setor</label>
                         <select id="inputSetor" class="form-select">
                           <option selected></option>
-                          <option >VENDAS DE NOVOS</option>
+                          <option>VENDAS DE NOVOS</option>
                           <option>VENDA SEMINOVOS</option>
                           <option>CONTROLADORIA</option>
-                          <option >ADMINISTRATIVO</option>
+                          <option>ADMINISTRATIVO</option>
                           <option>VENDA DIRETA</option>
                           <option>CONSÓRCIO</option>
                           <option>RECEPÇÃO</option>
@@ -171,12 +173,11 @@
                           <option>CRM</option>
                           <option>CAA</option>
                           <option>RH</option>
-                          <option >DP</option>
+                          <option>DP</option>
                           <option>TI</option>
                         </select>
                       </div>
 
-                      
                       <div class="col-md-4">
                         <label for="inputFuncao" class="form-label"
                           >Função</label
@@ -199,7 +200,9 @@
                       class="border p-3 rounded text-center bg-light shadow-sm w-100"
                       style="max-width: 250px"
                     >
-                      <label class="form-label d-block">Foto colaborador</label>
+                      <label class="form-label d-block"
+                        >Foto colaborador</label
+                      >
                       <img
                         id="imagePreviewColaborador"
                         src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
@@ -217,49 +220,53 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="col-12"><hr class="my-4" /></div>
               <div class="col-12">
                 <h2 class="display-6">Sistemas</h2>
               </div>
+
               <div class="col-md-2">
-                        <label for="inputAD" class="form-label">Usuario AD</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="teste.bennesby"
-                          id="inputAD"
-                        />
-                      </div>
-                      <div class="col-md-2">
-                        <label for="inputAD" class="form-label">Usuario Apollo</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="TESTE.1234"
-                          id="inputAD"
-                        />
-                      </div>
+                <label for="inputUsuarioAD" class="form-label"
+                  >Usuario AD</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="teste.bennesby"
+                  id="inputUsuarioAD"
+                />
+              </div>
+              <div class="col-md-2">
+                <label for="inputUsuarioApollo" class="form-label"
+                  >Usuario Apollo</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="TESTE.1234"
+                  id="inputUsuarioApollo"
+                />
+              </div>
 
               <div class="col-md-3">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="example@bennesby.com.br"
-                          id="inputEmail"
-                        />
-                      </div>
-                      <div class="col-md-1">
-                        <label for="inputRamal" class="form-label">Ramal</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="0000"
-                          id="inputRamal"
-                        />
-                      </div>
-
+                <label for="inputEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="example@bennesby.com.br"
+                  id="inputEmail"
+                />
+              </div>
+              <div class="col-md-1">
+                <label for="inputRamal" class="form-label">Ramal</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="0000"
+                  id="inputRamal"
+                />
+              </div>
 
               <div class="col-12"><hr class="my-4" /></div>
               <div class="col-12">
@@ -478,8 +485,10 @@
               <div class="col-12">
                 <h2 class="display-6">Telefonia Corporativa</h2>
               </div>
-                <div class="col-md-2">
-                <label for="inputFabricanteCelular" class="form-label">Fabricante</label>
+              <div class="col-md-2">
+                <label for="inputFabricanteCelular" class="form-label"
+                  >Fabricante</label
+                >
                 <select id="inputFabricanteCelular" class="form-select">
                   <option selected></option>
                   <option>Samsung</option>
@@ -490,7 +499,8 @@
                 </select>
               </div>
               <div class="col-md-2">
-                <label for="inputModeloCelular" class="form-label">Modelo</label
+                <label for="inputModeloCelular" class="form-label"
+                  >Modelo</label
                 ><input
                   type="text"
                   class="form-control"
@@ -508,7 +518,8 @@
                 />
               </div>
               <div class="col-md-2">
-                <label for="inputOperadora" class="form-label">Operadora</label
+                <label for="inputOperadora" class="form-label"
+                  >Operadora</label
                 ><select id="inputOperadora" class="form-select">
                   <option selected>Vivo</option>
                   <option>CLARO</option>
@@ -526,91 +537,195 @@
                   id="inputNumeroChip"
                 />
               </div>
-              
+
               <div class="col-12"><hr class="my-4" /></div>
 
               <div class="col-12">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                      <h2 class="display-6 m-0">Termos de Responsabilidade</h2>
-                      <button type="button" class="btn btn-success m-3" id="add-termo-btn">
-                          <i class="bi bi-plus-lg"></i> Adicionar Equipamento
-                      </button>
-                  </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h2 class="display-6 m-0">Termos de Responsabilidade</h2>
+                  <button
+                    type="button"
+                    class="btn btn-success m-3"
+                    id="add-termo-btn"
+                  >
+                    <i class="bi bi-plus-lg"></i> Adicionar Equipamento
+                  </button>
+                </div>
               </div>
 
               <div class="col-12" id="termos-container">
-                  <div class="row g-4 mb-4 termo-item">
-                      <div class="col-md-6">
-                          <div class="p-3 border rounded shadow-sm h-100">
-                              <div class="d-flex justify-content-between align-items-center mb-3">
-                                  <p class="h5 m-0">Entrega de Equipamento</p>
-                                  <button type="button" class="btn btn-danger btn-sm remove-termo-btn" style="display: none">
-                                      <i class="bi bi-trash"></i>
-                                  </button>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="inputTermosEq-1" class="form-label">Equipamento</label>
-                                  <select id="inputTermosEq-1" name="termos[1][equipamento]" class="form-select">
-                                    <option selected></option>
-                                      <option >Desktop</option>
-                                      <option>Notebook</option>
-                                      <option>Telefone</option>
-                                      <option>Outros</option>
-                                  </select>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="datepickerTermos-1" class="form-label">Assinado em:</label>
-                                  <input type="text" class="form-control datepicker" placeholder="dd/mm/aaaa" id="datepickerTermos-1" name="termos[1][data_assinatura]"/>
-                              </div>
-                              <div class="d-flex justify-content-center gap-3 mt-3">
-                                  <div class="text-center foto-preview-container">
-                                      <label for="inputGroupFileEquip-1" class="form-label d-block">Foto Equip.</label>
-                                      <img id="imagePreviewEquip-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block"/>
-                                      <input class="form-control form-control-sm" type="file" id="inputGroupFileEquip-1" name="termos[1][foto_equip]" accept="image/*,application/pdf"/>
-                                  </div>
-                                  <div class="text-center foto-preview-container">
-                                      <label for="inputGroupFileTermos-1" class="form-label d-block">Termo (PDF/Foto)</label>
-                                      <img id="imagePreviewTermos-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block"/>
-                                      <input class="form-control form-control-sm" type="file" id="inputGroupFileTermos-1" name="termos[1][foto_termo]" accept="image/*,application/pdf"/>
-                                  </div>
-                              </div>
-                          </div>
+                <div class="row g-4 mb-4 termo-item">
+                  <div class="col-md-6">
+                    <div class="p-3 border rounded shadow-sm h-100">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="h5 m-0">Entrega de Equipamento</p>
+                        <button
+                          type="button"
+                          class="btn btn-danger btn-sm remove-termo-btn"
+                          style="display: none"
+                        >
+                          <i class="bi bi-trash"></i>
+                        </button>
                       </div>
-                      <div class="col-md-6">
-                          <div class="p-3 border rounded shadow-sm h-100">
-                              <p class="h5 mb-3">Devolução de Equipamento</p>
-                              <div class="mb-3">
-                                  <label for="inputTermosEqDev-1" class="form-label">Equipamento</label>
-                                  <select id="inputTermosEqDev-1" name="termos[1][equipamento_devolucao]" class="form-select">
-                                    <option selected></option>
-                                      <option >Desktop</option>
-                                      <option>Notebook</option>
-                                      <option>Telefone</option>
-                                      <option>Fone de Ouvido</option>
-                                      <option>Webcam</option>
-                                      <option>Projetor</option>
-                                      <option>Outros</option>
-                                  </select>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="datepickerTermosDev-1" class="form-label">Assinado em:</label>
-                                  <input type="text" class="form-control datepicker" placeholder="dd/mm/aaaa" id="datepickerTermosDev-1" name="termos[1][data_devolucao]"/>
-                              </div>
-                              <div class="d-flex justify-content-center gap-3 mt-3">
-                                  <div class="text-center foto-preview-container">
-                                      <label for="inputGroupFileEquipDev-1" class="form-label d-block">Foto Equip.</label>
-                                      <img id="imagePreviewEquipDev-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block"/>
-                                      <input class="form-control form-control-sm" type="file" id="inputGroupFileEquipDev-1" name="termos[1][foto_equip_devolucao]" accept="image/*,application/pdf"/>
-                                  </div>
-                                  <div class="text-center foto-preview-container">
-                                      <label for="inputGroupFileTermosDev-1" class="form-label d-block">Termo (PDF/Foto)</label>
-                                      <img id="imagePreviewTermosDev-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block"/>
-                                      <input class="form-control form-control-sm" type="file" id="inputGroupFileTermosDev-1" name="termos[1][foto_termo_devolucao]" accept="image/*,application/pdf"/>
-                                  </div>
-                              </div>
-                          </div>
+                      <div class="mb-3">
+                        <label for="inputTermosEq-1" class="form-label"
+                          >Equipamento</label
+                        >
+                        <select
+                          id="inputTermosEq-1"
+                          name="termos[1][equipamento]"
+                          class="form-select"
+                        >
+                          <option selected></option>
+                          <option>Desktop</option>
+                          <option>Notebook</option>
+                          <option>Telefone</option>
+                          <option>Outros</option>
+                        </select>
                       </div>
+                      <div class="mb-3">
+                        <label for="datepickerTermos-1" class="form-label"
+                          >Assinado em:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control datepicker"
+                          placeholder="dd/mm/aaaa"
+                          id="datepickerTermos-1"
+                          name="termos[1][data_assinatura]"
+                        />
+                      </div>
+                      <div class="d-flex justify-content-center gap-3 mt-3">
+                        <div class="text-center foto-preview-container">
+                          <label
+                            for="inputGroupFileEquip-1"
+                            class="form-label d-block"
+                            >Foto Equip.</label
+                          >
+                          <img
+                            id="imagePreviewEquip-1"
+                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+                            alt="Preview"
+                            style="width: 180px; height: 180px; object-fit: cover"
+                            class="img-thumbnail mb-2 mx-auto d-block"
+                          />
+                          <input
+                            class="form-control form-control-sm"
+                            type="file"
+                            id="inputGroupFileEquip-1"
+                            name="termos[1][foto_equip]"
+                            accept="image/*,application/pdf"
+                          />
+                        </div>
+                        <div class="text-center foto-preview-container">
+                          <label
+                            for="inputGroupFileTermos-1"
+                            class="form-label d-block"
+                            >Termo (PDF/Foto)</label
+                          >
+                          <img
+                            id="imagePreviewTermos-1"
+                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png"
+                            alt="Preview"
+                            style="width: 180px; height: 180px; object-fit: cover"
+                            class="img-thumbnail mb-2 mx-auto d-block"
+                          />
+                          <input
+                            class="form-control form-control-sm"
+                            type="file"
+                            id="inputGroupFileTermos-1"
+                            name="termos[1][foto_termo]"
+                            accept="image/*,application/pdf"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="p-3 border rounded shadow-sm h-100">
+                      <p class="h5 mb-3">Devolução de Equipamento</p>
+                      <div class="mb-3">
+                        <label for="inputTermosEqDev-1" class="form-label"
+                          >Equipamento</label
+                        >
+                        <select
+                          id="inputTermosEqDev-1"
+                          name="termos[1][equipamento_devolucao]"
+                          class="form-select"
+                        >
+                          <option selected></option>
+                          <option>Desktop</option>
+                          <option>Notebook</option>
+                          <option>Telefone</option>
+                          <option>Fone de Ouvido</option>
+                          <option>Webcam</option>
+                          <option>Projetor</option>
+                          <option>Outros</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="datepickerTermosDev-1" class="form-label"
+                          >Assinado em:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control datepicker"
+                          placeholder="dd/mm/aaaa"
+                          id="datepickerTermosDev-1"
+                          name="termos[1][data_devolucao]"
+                        />
+                      </div>
+                      <div class="d-flex justify-content-center gap-3 mt-3">
+                        <div class="text-center foto-preview-container">
+                          <label
+                            for="inputGroupFileEquipDev-1"
+                            class="form-label d-block"
+                            >Foto Equip.</label
+                          >
+                          <img
+                            id="imagePreviewEquipDev-1"
+                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
+                            alt="Preview"
+                            style="width: 180px; height: 180px; object-fit: cover"
+                            class="img-thumbnail mb-2 mx-auto d-block"
+                          />
+                          <input
+                            class="form-control form-control-sm"
+                            type="file"
+                            id="inputGroupFileEquipDev-1"
+                            name="termos[1][foto_equip_devolucao]"
+                            accept="image/*,application/pdf"
+                          />
+                        </div>
+                        <div class="text-center foto-preview-container">
+                          <label
+                            for="inputGroupFileTermosDev-1"
+                            class="form-label d-block"
+                            >Termo (PDF/Foto)</label
+                          >
+                          <img
+                            id="imagePreviewTermosDev-1"
+                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png"
+                            alt="Preview"
+                            style="width: 180px; height: 180px; object-fit: cover"
+                            class="img-thumbnail mb-2 mx-auto d-block"
+                          />
+                          <input
+                            class="form-control form-control-sm"
+                            type="file"
+                            id="inputGroupFileTermosDev-1"
+                            name="termos[1][foto_termo_devolucao]"
+                            accept="image/*,application/pdf"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-12"><hr class="my-4" /></div>
 
@@ -639,150 +754,27 @@
 
     <footer class="text-center p-4"></footer>
 
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-white">
+            <h5 class="modal-title" id="modalLabel">Sucesso!</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
     <script src="https://unpkg.com/imask"></script>
 
-    <script>
-
-
-      document.addEventListener("DOMContentLoaded", () => {
-        // --- FUNÇÃO GENÉRICA E FINAL PARA PREVIEW ---
-        const configurarPreviewImagem = (inputFileElement) => {
-          if (!inputFileElement) return;
-          const parentContainer = inputFileElement.closest('.foto-preview-container, #colaborador-foto-container');
-          if (!parentContainer) return;
-          
-          const previewImg = parentContainer.querySelector('img');
-          if (!previewImg) return;
-
-          const defaultImgSrc = 'https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png';
-          // Ícone de PDF em formato SVG (auto-contido, não precisa de links externos)
-          const pdfIconSrc = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23dc3545' class='bi bi-file-earmark-pdf-fill' viewBox='0 0 16 16'%3e%3cpath d='M5.523 12.424q.21-.164.479-.164.27 0 .479.164.21.164.21.377a.72.72 0 0 1-.21.566q-.21.164-.479.164-.27 0-.479-.164a.72.72 0 0 1-.21-.566q0-.213.21-.377'/%3e%3cpath d='M4.603 14.087q-.42.215-.748.215a1.13 1.13 0 0 1-.933-.417q-.354-.417-.354-1.007c0-.666.318-1.17.933-1.17.346 0 .65.163.847.435l.12.166q.163.215.28.435a1.12 1.12 0 0 1 .148.566c0 .51-.158.94-.47 1.252m-1.57-.49c.26 0 .435-.14.53-.285l.04-.066q-.133-.28-.31-.49a.52.52 0 0 0-.49-.164q-.346 0-.53.224a.55.55 0 0 0-.188.468q0 .29.188.45a.53.53 0 0 0 .53.164'/%3e%3cpath d='M8.861 10.112q-.43.26-.74.26-.377 0-.633-.194a.72.72 0 0 1-.254-.577q0-.354.224-.53a.8.8 0 0 1 .592-.174q.318 0 .566.194l.053.066q.174.215.26.435.096.224.096.49 0 .329-.158.586a1.06 1.06 0 0 1-.417.417m-1.554.49q.318 0 .53-.157a.54.54 0 0 0 .194-.406q0-.23-.133-.385a.58.58 0 0 0-.406-.157q-.224 0-.354.12-.133.111-.133.266a.49.49 0 0 0 .12.354q.12.12.3.12'/%3e%3cpath fill-rule='evenodd' d='M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2.793a1 1 0 0 0 1 1H13v-.546l-1.745-1.745a.5.5 0 0 0-.707 0L8.5 6.207l-1.745-1.745a.5.5 0 0 0-.707 0L3 7.707V2.5a.5.5 0 0 1 .5-.5z'/%3e%3c/svg%3e";
-
-          inputFileElement.addEventListener("change", (event) => {
-            const file = event.target.files[0];
-            if (!file) {
-                if (previewImg.id.includes('Termos')) {
-                    previewImg.src = 'https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png';
-                } else {
-                    previewImg.src = defaultImgSrc;
-                }
-                return;
-            }
-
-            if (file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    previewImg.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            } else if (file.type === 'application/pdf') {
-                previewImg.src = pdfIconSrc;
-            } else {
-                previewImg.src = defaultImgSrc;
-            }
-          });
-        };
-
-        const addTermoBtn = document.getElementById('add-termo-btn');
-        const termosContainer = document.getElementById('termos-container');
-        let termoCounter = 1;
-
-        if (addTermoBtn && termosContainer) {
-            addTermoBtn.addEventListener('click', () => {
-                termoCounter++;
-                const template = termosContainer.querySelector('.termo-item');
-                const clone = template.cloneNode(true);
-
-                clone.querySelectorAll('input, select').forEach(input => {
-                    if (input.type !== 'file') {
-                        input.value = '';
-                    } else {
-                        input.value = null;
-                    }
-                });
-                
-                clone.querySelectorAll('img').forEach(img => {
-                    if (img.id.includes('Termos')) {
-                        img.src = 'https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png';
-                    } else {
-                        img.src = 'https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png';
-                    }
-                });
-
-                clone.querySelectorAll('[id]').forEach(element => {
-                    element.id = element.id.split('-')[0] + `-${termoCounter}`;
-                });
-                clone.querySelectorAll('label[for]').forEach(label => {
-                    const oldFor = label.getAttribute('for');
-                    if (oldFor) {
-                        label.setAttribute('for', oldFor.split('-')[0] + `-${termoCounter}`);
-                    }
-                });
-                clone.querySelectorAll('[name]').forEach(element => {
-                    element.name = element.name.replace(/\[\d+\]/, `[${termoCounter}]`);
-                });
-
-                clone.querySelectorAll('.datepicker').forEach(newDatepicker => {
-                    flatpickr(newDatepicker, flatpickrConfig);
-                });
-                
-                clone.querySelectorAll('input[type="file"]').forEach(input => {
-                    configurarPreviewImagem(input);
-                });
-                
-                const removeBtn = clone.querySelector('.remove-termo-btn');
-                if(removeBtn) removeBtn.style.display = 'block';
-
-                termosContainer.appendChild(clone);
-            });
-        }
-
-        termosContainer.addEventListener('click', (event) => {
-            const removeButton = event.target.closest('.remove-termo-btn');
-            if (removeButton) {
-                removeButton.closest('.termo-item').remove();
-            }
-        });
-        
-        const flatpickrConfig = {
-          locale: "pt",
-          dateFormat: "d/m/Y",
-          allowInput: true,
-        };
-        document.querySelectorAll('.datepicker').forEach(el => flatpickr(el, flatpickrConfig));
-        
-        document.querySelectorAll('input[type="file"]').forEach(input => {
-            configurarPreviewImagem(input);
-        });
-
-        const cpfInput = document.getElementById("inputCPF");
-        if (cpfInput) IMask(cpfInput, { mask: "000.000.000-00" });
-
-        const chipInput = document.getElementById("inputNumeroChip");
-        if (chipInput) IMask(chipInput, { mask: "(00) 00000-0000" });
-
-        const hostInput = document.getElementById("inputHostName");
-        if (hostInput) hostInput.addEventListener("input", () => (hostInput.value = hostInput.value.toUpperCase()));
-
-        const selectSituacao = document.getElementById("inputSituacao");
-        if (selectSituacao) {
-          const atualizaCor = () => {
-            selectSituacao.classList.remove("bg-success", "bg-danger", "text-white");
-            if (selectSituacao.value === "Ativo") {
-              selectSituacao.classList.add("bg-success", "text-white");
-            } else if (selectSituacao.value === "Inativo") {
-              selectSituacao.classList.add("bg-danger", "text-white");
-            }
-          };
-          selectSituacao.addEventListener("change", atualizaCor);
-          atualizaCor();
-        }
-      });
-
-
-</script>
+    <script src="/assets/js/main.js?v=1.1"></script>
   </body>
 </html>
