@@ -1,0 +1,25 @@
+/* Animação de transição suave para o formulário */
+.form-transition {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estado de "carregando" (invisível/travado) */
+.loading-effect {
+    opacity: 0.3;
+    transform: translateY(5px);
+    pointer-events: none; /* Bloqueia cliques */
+    user-select: none;    /* Bloqueia seleção de texto */
+}
+
+      body {
+        padding-top: 90px;
+      }
+
+
+.bg-gradient-azul {
+      background: #295890;
+      background: linear-gradient(111deg,rgba(41, 88, 144, 1) 0%, rgba(29, 57, 92, 1) 50%, rgba(9, 26, 43,1) 100%);
+      min-height: 100vh;
+}

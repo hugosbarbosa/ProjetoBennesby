@@ -6,18 +6,15 @@
     <title>Projeto Bennesby</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-  </head>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
   <body class="bg-gradient-azul py-4 px-lg-5">
-    <header>
+
+ <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
@@ -32,21 +29,13 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="index.html"
-                  >Cadastros</a
-                >
+                <a class="nav-link active" href="index.html">Cadastros</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="equipamentos.html">Equipamentos</a>
@@ -58,39 +47,47 @@
                 <a class="nav-link" href="pesquisa.html">Pesquisas</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+
+            <form class="d-flex align-items-center" role="search" id="navbarSearchForm">
+              
               <input
                 class="form-control me-2"
                 type="search"
-                placeholder="Procurar"
+                id="navbarSearchInput" 
+                placeholder="Buscar Nome, CPF, ID..."
                 aria-label="Search"
               />
+
+              <button 
+                type="button" 
+                id="btnLimparEdicao" 
+                class="btn btn-outline-danger me-2 d-none" 
+                title="Sair da edição (Novo Cadastro)"
+              >
+                  <i class="bi bi-x-lg"></i>
+              </button>
+
               <button class="btn btn-outline-success" type="submit">
                 <i class="bi bi-search"></i>
               </button>
             </form>
+
           </div>
         </div>
       </nav>
     </header>
 
     <main class="mt-sm-6">
-      <div
-        class="container-fluid col-lg-10 col-md-12 col-sm-12 bg-white p-4 p-md-5 border rounded-3 shadow-lg"
-      >
+      <div class="container-fluid col-lg-10 col-md-12 col-sm-12 bg-white p-4 p-md-5 border rounded-3 shadow-lg">
         <div class="row">
           <div class="col-12">
             <div id="alert-placeholder"></div>
-
             <form class="row g-3">
-              <div
-                class="col-12 d-flex justify-content-between align-items-center mb-3"
-              >
+              
+              <div class="col-12 d-flex justify-content-between align-items-center mb-3">
                 <h1 class="display-6 mt-5">Dados do colaborador</h1>
                 <div class="col-lg-3 col-md-4 col-sm-5">
-                  <label for="inputSituacao" class="form-label mt-5"
-                    >Situação</label
-                  >
+                  <label for="inputSituacao" class="form-label mt-5">Situação</label>
                   <select id="inputSituacao" class="form-select">
                     <option value="Ativo" selected>Ativo</option>
                     <option value="Inativo">Inativo</option>
@@ -103,453 +100,180 @@
                     <div class="row g-3">
                       <div class="col-md-6">
                         <label for="inputName" class="form-label">Nome</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="inputName"
-                          placeholder="Digite o nome completo"
-                        />
+                        <input type="text" class="form-control" id="inputName" placeholder="Digite o nome completo" />
                       </div>
                       <div class="col-md-3">
                         <label for="inputCPF" class="form-label">CPF</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Somente dígitos"
-                          id="inputCPF"
-                          maxlength="14"
-                          inputmode="numeric"
-                        />
+                        <input type="text" class="form-control" placeholder="Somente dígitos" id="inputCPF" maxlength="14" inputmode="numeric" />
                       </div>
                       <div class="col-md-3">
-                        <label for="datepickerNascimento" class="form-label"
-                          >Data de Nascimento</label
-                        >
-                        <input
-                          type="text"
-                          id="datepickerNascimento"
-                          class="form-control datepicker"
-                          placeholder="dd/mm/aaaa"
-                        />
+                        <label for="datepickerNascimento" class="form-label">Data de Nascimento</label>
+                        <input type="text" id="datepickerNascimento" class="form-control datepicker" placeholder="dd/mm/aaaa" />
                       </div>
                       <div class="col-md-4">
-                        <label for="inputUnidade" class="form-label"
-                          >Unidade</label
-                        >
+                        <label for="inputUnidade" class="form-label">Unidade</label>
                         <select id="inputUnidade" class="form-select">
-                          <option selected></option>
-                          <option>U20</option>
-                          <option>U18</option>
-                          <option>U17</option>
-                          <option>U09</option>
-                          <option>U08</option>
-                          <option>U04</option>
-                          <option>T97</option>
-                          <option>T95</option>
-                          <option>Bajaj - SJ</option>
-                          <option>Bajaj - CG</option>
-                          <option>AutoShop - SJ</option>
-                          <option>AutoCenter - SJ</option>
-                          <option>LocaBenn</option>
+                          <option selected></option><option>U20</option><option>U18</option><option>U17</option><option>U09</option><option>U08</option><option>U04</option><option>T97</option><option>T95</option><option>Bajaj - SJ</option><option>Bajaj - CG</option><option>AutoShop - SJ</option><option>AutoCenter - SJ</option><option>LocaBenn</option>
                         </select>
                       </div>
-
                       <div class="col-md-4">
                         <label for="inputSetor" class="form-label">Setor</label>
                         <select id="inputSetor" class="form-select">
-                          <option selected></option>
-                          <option>VENDAS DE NOVOS</option>
-                          <option>VENDA SEMINOVOS</option>
-                          <option>CONTROLADORIA</option>
-                          <option>ADMINISTRATIVO</option>
-                          <option>VENDA DIRETA</option>
-                          <option>CONSÓRCIO</option>
-                          <option>RECEPÇÃO</option>
-                          <option>SEGUROS</option>
-                          <option>OFICINA</option>
-                          <option>PEÇAS</option>
-                          <option>CAIXA</option>
-                          <option>F&I</option>
-                          <option>CRM</option>
-                          <option>CAA</option>
-                          <option>RH</option>
-                          <option>DP</option>
-                          <option>TI</option>
+                          <option selected></option><option>VENDAS DE NOVOS</option><option>VENDA SEMINOVOS</option><option>CONTROLADORIA</option><option>ADMINISTRATIVO</option><option>VENDA DIRETA</option><option>CONSÓRCIO</option><option>RECEPÇÃO</option><option>SEGUROS</option><option>OFICINA</option><option>PEÇAS</option><option>CAIXA</option><option>F&I</option><option>CRM</option><option>CAA</option><option>RH</option><option>DP</option><option>TI</option>
                         </select>
                       </div>
-
                       <div class="col-md-4">
-                        <label for="inputFuncao" class="form-label"
-                          >Função</label
-                        >
+                        <label for="inputFuncao" class="form-label">Função</label>
                         <select id="inputFuncao" class="form-select">
-                          <option selected></option>
-                          <option>VENDEDOR</option>
-                          <option>GERENCIA</option>
-                          <option>RECEPÇÃO OFICINA</option>
-                          <option>RECEPÇÃO VENDAS</option>
+                          <option selected></option><option>VENDEDOR</option><option>GERENCIA</option><option>RECEPÇÃO OFICINA</option><option>RECEPÇÃO VENDAS</option>
                         </select>
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="col-lg-3 d-flex align-items-center justify-content-center"
-                  >
-                    <div
-                      id="colaborador-foto-container"
-                      class="border p-3 rounded text-center bg-light shadow-sm w-100"
-                      style="max-width: 250px"
-                    >
-                      <label class="form-label d-block"
-                        >Foto colaborador</label
-                      >
-                      <img
-                        id="imagePreviewColaborador"
-                        src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
-                        alt="Pré-visualização da imagem"
-                        style="width: 180px; height: 180px; object-fit: cover"
-                        class="img-thumbnail mb-2 mx-auto d-block"
-                      />
-                      <input
-                        class="form-control form-control-sm"
-                        type="file"
-                        id="inputFotoColaborador"
-                        accept="image/*"
-                      />
+                  <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                    <div id="colaborador-foto-container" class="border p-3 rounded text-center bg-light shadow-sm w-100" style="max-width: 250px">
+                      <label class="form-label d-block">Foto colaborador</label>
+                      <img id="imagePreviewColaborador" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block" />
+                      <input class="form-control form-control-sm" type="file" id="inputFotoColaborador" accept="image/*" />
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-12"><hr class="my-4" /></div>
-              <div class="col-12">
-                <h2 class="display-6">Sistemas</h2>
-              </div>
-
+              <div class="col-12"><h2 class="display-6">Sistemas</h2></div>
               <div class="col-md-2">
-                <label for="inputUsuarioAD" class="form-label"
-                  >Usuario AD</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="teste.bennesby"
-                  id="inputUsuarioAD"
-                />
+                <label for="inputUsuarioAD" class="form-label">Usuario AD</label>
+                <input type="text" class="form-control" placeholder="teste.bennesby" id="inputUsuarioAD" />
               </div>
               <div class="col-md-2">
-                <label for="inputUsuarioApollo" class="form-label"
-                  >Usuario Apollo</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="TESTE.1234"
-                  id="inputUsuarioApollo"
-                />
+                <label for="inputUsuarioApollo" class="form-label">Usuario Apollo</label>
+                <input type="text" class="form-control" placeholder="TESTE.1234" id="inputUsuarioApollo" />
               </div>
-
               <div class="col-md-3">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="example@bennesby.com.br"
-                  id="inputEmail"
-                />
+                <input type="email" class="form-control" placeholder="example@bennesby.com.br" id="inputEmail" />
               </div>
               <div class="col-md-1">
                 <label for="inputRamal" class="form-label">Ramal</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="0000"
-                  id="inputRamal"
-                />
+                <input type="text" class="form-control" placeholder="0000" id="inputRamal" />
               </div>
 
               <div class="col-12"><hr class="my-4" /></div>
-              <div class="col-12">
-                <h2 class="display-6">Equipamentos do Colaborador</h2>
-              </div>
+              <div class="col-12"><h2 class="display-6">Equipamentos do Colaborador</h2></div>
               <div class="col-md-2">
-                <label for="inputComputador" class="form-label"
-                  >Computador</label
-                ><select id="inputComputador" class="form-select">
-                  <option selected></option>
-                  <option>Desktop</option>
-                  <option>Notebook</option>
+                <label for="inputComputador" class="form-label">Computador</label>
+                <select id="inputComputador" class="form-select">
+                  <option selected></option><option value="Desktop">Desktop</option><option value="Notebook">Notebook</option>
                 </select>
               </div>
               <div class="col-md-2">
-                <label for="inputFabricantePC" class="form-label"
-                  >Fabricante</label
-                ><select id="inputFabricantePC" class="form-select">
-                  <option selected></option>
-                  <option>Positivo</option>
-                  <option>Dell</option>
-                  <option>Generico</option>
-                  <option>Samsung</option>
-                  <option>Acer</option>
-                  <option>Asus</option>
-                  <option>Lenovo</option>
+                <label for="inputFabricantePC" class="form-label">Fabricante</label>
+                <select id="inputFabricantePC" class="form-select">
+                  <option selected></option><option>Positivo</option><option>Dell</option><option>Generico</option><option>Samsung</option><option>Acer</option><option>Asus</option><option>Lenovo</option>
                 </select>
               </div>
               <div class="col-md-2">
-                <label for="inputModeloPC" class="form-label">Modelo</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Modelo"
-                  id="inputModeloPC"
-                />
+                <label for="inputModeloPC" class="form-label">Modelo</label>
+                <input type="text" class="form-control" placeholder="Modelo" id="inputModeloPC" />
               </div>
               <div class="col-md-3">
-                <label for="inputSerial" class="form-label">Serial</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Serial Number"
-                  id="inputSerial"
-                />
+                <label for="inputSerial" class="form-label">Serial</label>
+                <input type="text" class="form-control" placeholder="Serial Number" id="inputSerial" />
               </div>
               <div class="col-md-3">
-                <label for="inputHostName" class="form-label">HostName</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="U0N-NTI-00N"
-                  id="inputHostName"
-                />
+                <label for="inputHostName" class="form-label">HostName</label>
+                <input type="text" class="form-control" placeholder="U0N-NTI-00N" id="inputHostName" />
               </div>
               <div class="col-md-3">
-                <label for="inputRevenda" class="form-label"
-                  >Revenda do contrato</label
-                ><select id="inputRevenda" class="form-select">
-                  <option selected></option>
-                  <option>U20</option>
-                  <option>U18</option>
-                  <option>U17</option>
-                  <option>U09</option>
-                  <option>U08</option>
-                  <option>U04</option>
-                  <option>T97</option>
-                  <option>T95</option>
-                  <option>Bajaj - SJ</option>
-                  <option>Bajaj - CG</option>
-                  <option>AutoShop - SJ</option>
-                  <option>AutoCenter - SJ</option>
-                  <option>LocaBenn</option>
+                <label for="inputRevenda" class="form-label">Revenda</label>
+                <select id="inputRevenda" class="form-select">
+                  <option selected></option><option>U20</option><option>U18</option><option>U17</option><option>U09</option><option>U08</option><option>U04</option><option>T97</option><option>T95</option><option>Bajaj - SJ</option><option>Bajaj - CG</option><option>AutoShop - SJ</option><option>AutoCenter - SJ</option><option>LocaBenn</option>
                 </select>
               </div>
               <div class="col-md-3">
-                <label for="inputContrato" class="form-label">Contrato</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Número do Contrato"
-                  id="inputContrato"
-                />
+                <label for="inputContrato" class="form-label">Contrato</label>
+                <input type="text" class="form-control" placeholder="Número do Contrato" id="inputContrato" />
               </div>
               <div class="col-lg-2 col-md-2">
-                <label for="datepickerContrato" class="form-label"
-                  >Data do Contrato</label
-                ><input
-                  type="text"
-                  id="datepickerContrato"
-                  class="form-control datepicker"
-                  placeholder="dd/mm/aaaa"
-                />
+                <label for="datepickerContrato" class="form-label">Data Contrato</label>
+                <input type="text" id="datepickerContrato" class="form-control datepicker" placeholder="dd/mm/aaaa" />
               </div>
               <div class="col-md-2">
-                <label for="inputPrazo" class="form-label">Prazo (Meses)</label
-                ><input
-                  type="number"
-                  id="inputPrazo"
-                  class="form-control"
-                  placeholder="Ex: 36"
-                />
+                <label for="inputPrazo" class="form-label">Prazo (Meses)</label>
+                <input type="number" id="inputPrazo" class="form-control" placeholder="Ex: 36" />
               </div>
               <div class="col-md-2">
-                <label for="inputParceiro" class="form-label">Parceiro</label
-                ><select id="inputParceiro" class="form-select">
-                  <option selected></option>
-                  <option>Positivo</option>
-                  <option>VivoTech</option>
+                <label for="inputParceiro" class="form-label">Parceiro</label>
+                <select id="inputParceiro" class="form-select">
+                  <option selected></option><option>Positivo</option><option>VivoTech</option>
                 </select>
               </div>
 
-              <div class="col-12 AbaMonitor"><hr class="my-4" /></div>
-              <div class="col-12">
-                <h2 class="display-6 AbaMonitor">Monitor</h2>
-              </div>
-              <div class="col-md-2">
-                <label for="inputFabricantePC" class="form-label"
-                  >Fabricante</label
-                ><select id="inputFabricantePC" class="form-select">
-                  <option selected></option>
-                  <option>Positivo</option>
-                  <option>Dell</option>
-                  <option>Generico</option>
-                  <option>Samsung</option>
-                  <option>Acer</option>
-                  <option>Asus</option>
-                  <option>Lenovo</option>
-                </select>
-              </div>
-              <div class="col-md-2">
-                <label for="inputModeloPC" class="form-label">Modelo</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Modelo"
-                  id="inputModeloPC"
-                />
-              </div>
-              <div class="col-md-3">
-                <label for="inputSerial" class="form-label">Serial</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Serial Number"
-                  id="inputSerial"
-                />
-              </div>
-              <div class="col-md-3">
-                <label for="inputHostName" class="form-label">HostName</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="U0N-NTI-00N"
-                  id="inputHostName"
-                />
-              </div>
-              <div class="col-md-3">
-                <label for="inputRevenda" class="form-label"
-                  >Revenda do contrato</label
-                ><select id="inputRevenda" class="form-select">
-                  <option selected></option>
-                  <option>U20</option>
-                  <option>U18</option>
-                  <option>U17</option>
-                  <option>U09</option>
-                  <option>U08</option>
-                  <option>U04</option>
-                  <option>T97</option>
-                  <option>T95</option>
-                  <option>Bajaj - SJ</option>
-                  <option>Bajaj - CG</option>
-                  <option>AutoShop - SJ</option>
-                  <option>AutoCenter - SJ</option>
-                  <option>LocaBenn</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <label for="inputContrato" class="form-label">Contrato</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Número do Contrato"
-                  id="inputContrato"
-                />
-              </div>
-              <div class="col-lg-2 col-md-2">
-                <label for="datepickerContrato" class="form-label"
-                  >Data do Contrato</label
-                ><input
-                  type="text"
-                  id="datepickerContrato"
-                  class="form-control datepicker"
-                  placeholder="dd/mm/aaaa"
-                />
-              </div>
-              <div class="col-md-2">
-                <label for="inputPrazo" class="form-label">Prazo (Meses)</label
-                ><input
-                  type="number"
-                  id="inputPrazo"
-                  class="form-control"
-                  placeholder="Ex: 36"
-                />
-              </div>
-              <div class="col-md-2">
-                <label for="inputParceiro" class="form-label">Parceiro</label
-                ><select id="inputParceiro" class="form-select">
-                  <option selected></option>
-                  <option>Positivo</option>
-                  <option>VivoTech</option>
-                </select>
+              <div id="secaoMonitor" class="col-12 d-none">
+                  <div class="col-12"><hr class="my-4" /></div>
+                  <div class="col-12 d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="display-6 m-0">Monitores</h2>
+                    <button type="button" class="btn btn-success btn-sm" id="add-monitor-btn">
+                        <i class="bi bi-plus-lg"></i> Adicionar Monitor
+                    </button>
+                  </div>
+
+                  <div id="monitores-container">
+                      <div class="row g-3 monitor-item mb-3 align-items-end">
+                        <div class="col-md-2">
+                            <label for="inputFabricanteMonitor-1" class="form-label">Fabricante</label>
+                            <select id="inputFabricanteMonitor-1" class="form-select monitor-fabricante">
+                            <option selected></option><option>Positivo</option><option>Dell</option><option>Samsung</option><option>LG</option><option>AOC</option><option>Lenovo</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputModeloMonitor-1" class="form-label">Modelo</label>
+                            <input type="text" class="form-control monitor-modelo" placeholder="Modelo" id="inputModeloMonitor-1" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputSerialMonitor-1" class="form-label">Serial</label>
+                            <input type="text" class="form-control monitor-serial" placeholder="Serial Number" id="inputSerialMonitor-1" />
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-danger btn-remove-monitor" style="display: none;"><i class="bi bi-trash"></i></button>
+                        </div>
+                      </div>
+                  </div>
               </div>
 
               <div class="col-12"><hr class="my-4" /></div>
-              <div class="col-12">
-                <h2 class="display-6">Telefonia Corporativa</h2>
-              </div>
+              <div class="col-12"><h2 class="display-6">Telefonia Corporativa</h2></div>
               <div class="col-md-2">
-                <label for="inputFabricanteCelular" class="form-label"
-                  >Fabricante</label
-                >
+                <label for="inputFabricanteCelular" class="form-label">Fabricante</label>
                 <select id="inputFabricanteCelular" class="form-select">
-                  <option selected></option>
-                  <option>Samsung</option>
-                  <option>Apple</option>
-                  <option>Acer</option>
-                  <option>Alcatel</option>
-                  <option>Outros</option>
+                  <option selected></option><option>Samsung</option><option>Apple</option><option>Acer</option><option>Alcatel</option><option>Outros</option>
                 </select>
               </div>
               <div class="col-md-2">
-                <label for="inputModeloCelular" class="form-label"
-                  >Modelo</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="Modelo do aparelho"
-                  id="inputModeloCelular"
-                />
+                <label for="inputModeloCelular" class="form-label">Modelo</label>
+                <input type="text" class="form-control" placeholder="Modelo do aparelho" id="inputModeloCelular" />
               </div>
               <div class="col-md-2">
-                <label for="inputIMEI" class="form-label">IMEI</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="IMEI"
-                  id="inputIMEI"
-                />
+                <label for="inputIMEI" class="form-label">IMEI</label>
+                <input type="text" class="form-control" placeholder="IMEI" id="inputIMEI" />
               </div>
               <div class="col-md-2">
-                <label for="inputOperadora" class="form-label"
-                  >Operadora</label
-                ><select id="inputOperadora" class="form-select">
-                  <option selected>Vivo</option>
-                  <option>CLARO</option>
-                  <option>TIM</option>
-                  <option>OI</option>
+                <label for="inputOperadora" class="form-label">Operadora</label>
+                <select id="inputOperadora" class="form-select">
+                  <option selected>Vivo</option><option>CLARO</option><option>TIM</option><option>OI</option>
                 </select>
               </div>
               <div class="col-md-3">
-                <label for="inputNumeroChip" class="form-label"
-                  >Número do Chip</label
-                ><input
-                  type="text"
-                  class="form-control"
-                  placeholder="+55 12 99999-9999"
-                  id="inputNumeroChip"
-                />
+                <label for="inputNumeroChip" class="form-label">Número do Chip</label>
+                <input type="text" class="form-control" placeholder="+55 12 99999-9999" id="inputNumeroChip" />
               </div>
 
               <div class="col-12"><hr class="my-4" /></div>
-
               <div class="col-12">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
+                <div class="d-flex justify-content-between align-items-center mb-3">
                   <h2 class="display-6 m-0">Termos de Responsabilidade</h2>
-                  <button
-                    type="button"
-                    class="btn btn-success m-3"
-                    id="add-termo-btn"
-                  >
+                  <button type="button" class="btn btn-success m-3" id="add-termo-btn">
                     <i class="bi bi-plus-lg"></i> Adicionar Equipamento
                   </button>
                 </div>
@@ -559,199 +283,88 @@
                 <div class="row g-4 mb-4 termo-item">
                   <div class="col-md-6">
                     <div class="p-3 border rounded shadow-sm h-100">
-                      <div
-                        class="d-flex justify-content-between align-items-center mb-3"
-                      >
+                      <div class="d-flex justify-content-between align-items-center mb-3">
                         <p class="h5 m-0">Entrega de Equipamento</p>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm remove-termo-btn"
-                          style="display: none"
-                        >
+                        <button type="button" class="btn btn-danger btn-sm remove-termo-btn" style="display: none">
                           <i class="bi bi-trash"></i>
                         </button>
                       </div>
                       <div class="mb-3">
-                        <label for="inputTermosEq-1" class="form-label"
-                          >Equipamento</label
-                        >
-                        <select
-                          id="inputTermosEq-1"
-                          name="termos[1][equipamento]"
-                          class="form-select"
-                        >
-                          <option selected></option>
-                          <option>Desktop</option>
-                          <option>Notebook</option>
-                          <option>Telefone</option>
-                          <option>Outros</option>
+                        <label for="inputTermosEq-1" class="form-label">Equipamento</label>
+                        <select id="inputTermosEq-1" name="termos[1][equipamento]" class="form-select">
+                          <option selected></option><option>Desktop</option><option>Notebook</option><option>Telefone</option><option>Outros</option>
                         </select>
                       </div>
                       <div class="mb-3">
-                        <label for="datepickerTermos-1" class="form-label"
-                          >Assinado em:</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control datepicker"
-                          placeholder="dd/mm/aaaa"
-                          id="datepickerTermos-1"
-                          name="termos[1][data_assinatura]"
-                        />
+                        <label for="datepickerTermos-1" class="form-label">Assinado em:</label>
+                        <input type="text" class="form-control datepicker" placeholder="dd/mm/aaaa" id="datepickerTermos-1" name="termos[1][data_assinatura]" />
                       </div>
                       <div class="d-flex justify-content-center gap-3 mt-3">
                         <div class="text-center foto-preview-container">
-                          <label
-                            for="inputGroupFileEquip-1"
-                            class="form-label d-block"
-                            >Foto Equip.</label
-                          >
-                          <img
-                            id="imagePreviewEquip-1"
-                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
-                            alt="Preview"
-                            style="width: 180px; height: 180px; object-fit: cover"
-                            class="img-thumbnail mb-2 mx-auto d-block"
-                          />
-                          <input
-                            class="form-control form-control-sm"
-                            type="file"
-                            id="inputGroupFileEquip-1"
-                            name="termos[1][foto_equip]"
-                            accept="image/*,application/pdf"
-                          />
+                          <label for="inputGroupFileEquip-1" class="form-label d-block">Foto Equip.</label>
+                          <img id="imagePreviewEquip-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block" />
+                          <input class="form-control form-control-sm" type="file" id="inputGroupFileEquip-1" name="termos[1][foto_equip]" accept="image/*,application/pdf" />
                         </div>
                         <div class="text-center foto-preview-container">
-                          <label
-                            for="inputGroupFileTermos-1"
-                            class="form-label d-block"
-                            >Termo (PDF/Foto)</label
-                          >
-                          <img
-                            id="imagePreviewTermos-1"
-                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png"
-                            alt="Preview"
-                            style="width: 180px; height: 180px; object-fit: cover"
-                            class="img-thumbnail mb-2 mx-auto d-block"
-                          />
-                          <input
-                            class="form-control form-control-sm"
-                            type="file"
-                            id="inputGroupFileTermos-1"
-                            name="termos[1][foto_termo]"
-                            accept="image/*,application/pdf"
-                          />
+                          <label for="inputGroupFileTermos-1" class="form-label d-block">Termo (PDF/Foto)</label>
+                          <img id="imagePreviewTermos-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block" />
+                          <input class="form-control form-control-sm" type="file" id="inputGroupFileTermos-1" name="termos[1][foto_termo]" accept="image/*,application/pdf" />
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="p-3 border rounded shadow-sm h-100">
-                      <p class="h5 mb-3">Devolução de Equipamento</p>
-                      <div class="mb-3">
-                        <label for="inputTermosEqDev-1" class="form-label"
-                          >Equipamento</label
-                        >
-                        <select
-                          id="inputTermosEqDev-1"
-                          name="termos[1][equipamento_devolucao]"
-                          class="form-select"
-                        >
-                          <option selected></option>
-                          <option>Desktop</option>
-                          <option>Notebook</option>
-                          <option>Telefone</option>
-                          <option>Fone de Ouvido</option>
-                          <option>Webcam</option>
-                          <option>Projetor</option>
-                          <option>Outros</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="datepickerTermosDev-1" class="form-label"
-                          >Assinado em:</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control datepicker"
-                          placeholder="dd/mm/aaaa"
-                          id="datepickerTermosDev-1"
-                          name="termos[1][data_devolucao]"
-                        />
-                      </div>
-                      <div class="d-flex justify-content-center gap-3 mt-3">
-                        <div class="text-center foto-preview-container">
-                          <label
-                            for="inputGroupFileEquipDev-1"
-                            class="form-label d-block"
-                            >Foto Equip.</label
-                          >
-                          <img
-                            id="imagePreviewEquipDev-1"
-                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png"
-                            alt="Preview"
-                            style="width: 180px; height: 180px; object-fit: cover"
-                            class="img-thumbnail mb-2 mx-auto d-block"
-                          />
-                          <input
-                            class="form-control form-control-sm"
-                            type="file"
-                            id="inputGroupFileEquipDev-1"
-                            name="termos[1][foto_equip_devolucao]"
-                            accept="image/*,application/pdf"
-                          />
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="h5 m-0">Devolução de Equipamento</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input check-em-uso" type="checkbox" role="switch" id="checkEmUso-1">
+                            <label class="form-check-label" for="checkEmUso-1">Ainda em posse</label>
                         </div>
-                        <div class="text-center foto-preview-container">
-                          <label
-                            for="inputGroupFileTermosDev-1"
-                            class="form-label d-block"
-                            >Termo (PDF/Foto)</label
-                          >
-                          <img
-                            id="imagePreviewTermosDev-1"
-                            src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png"
-                            alt="Preview"
-                            style="width: 180px; height: 180px; object-fit: cover"
-                            class="img-thumbnail mb-2 mx-auto d-block"
-                          />
-                          <input
-                            class="form-control form-control-sm"
-                            type="file"
-                            id="inputGroupFileTermosDev-1"
-                            name="termos[1][foto_termo_devolucao]"
-                            accept="image/*,application/pdf"
-                          />
-                        </div>
+                      </div>
+                      <div class="campos-devolucao">
+                          <div class="mb-3">
+                            <label for="inputTermosEqDev-1" class="form-label">Equipamento</label>
+                            <select id="inputTermosEqDev-1" name="termos[1][equipamento_devolucao]" class="form-select">
+                              <option selected></option><option>Desktop</option><option>Notebook</option><option>Telefone</option><option>Fone de Ouvido</option><option>Webcam</option><option>Projetor</option><option>Outros</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="datepickerTermosDev-1" class="form-label">Assinado em:</label>
+                            <input type="text" class="form-control datepicker" placeholder="dd/mm/aaaa" id="datepickerTermosDev-1" name="termos[1][data_devolucao]" />
+                          </div>
+                          <div class="d-flex justify-content-center gap-3 mt-3">
+                            <div class="text-center foto-preview-container">
+                              <label for="inputGroupFileEquipDev-1" class="form-label d-block">Foto Equip.</label>
+                              <img id="imagePreviewEquipDev-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=FOTO&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block" />
+                              <input class="form-control form-control-sm" type="file" id="inputGroupFileEquipDev-1" name="termos[1][foto_equip_devolucao]" accept="image/*,application/pdf" />
+                            </div>
+                            <div class="text-center foto-preview-container">
+                              <label for="inputGroupFileTermosDev-1" class="form-label d-block">Termo (PDF/Foto)</label>
+                              <img id="imagePreviewTermosDev-1" src="https://via.assets.so/img.jpg?w=400&h=400&gradientFrom=56CCF2&gradientTo=2F80ED&gradientAngle=135&text=PDF&f=png" alt="Preview" style="width: 180px; height: 180px; object-fit: cover" class="img-thumbnail mb-2 mx-auto d-block" />
+                              <input class="form-control form-control-sm" type="file" id="inputGroupFileTermosDev-1" name="termos[1][foto_termo_devolucao]" accept="image/*,application/pdf" />
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col-12"><hr class="my-4" /></div>
 
-              <div
-                class="col-12 d-flex justify-content-end align-items-center gap-3"
-              >
+              <div class="col-12 d-flex justify-content-end align-items-center gap-3">
                 <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="gridCheck"
-                  />
-                  <label class="form-check-label" for="gridCheck"
-                    >Confirmar dados</label
-                  >
+                  <input class="form-check-input" type="checkbox" id="gridCheck" />
+                  <label class="form-check-label" for="gridCheck">Confirmar dados</label>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg">
-                  Salvar Cadastro
-                </button>
+                <button type="submit" class="btn btn-primary btn-lg">Salvar Cadastro</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </main>
-
     <footer class="text-center p-4"></footer>
 
     <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -761,8 +374,7 @@
             <h5 class="modal-title" id="modalLabel">Sucesso!</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            </div>
+          <div class="modal-body"></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
           </div>
@@ -770,11 +382,10 @@
       </div>
     </div>
 
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
     <script src="https://unpkg.com/imask"></script>
-
-    <script src="./assets/js/main.js?v=1.1"></script>
+    <script src="assets/js/main.js?v=5.0"></script>
   </body>
 </html>

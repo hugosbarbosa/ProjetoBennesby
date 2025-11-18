@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa - Projeto Bennesby</title>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/imagens/LOGO BENNESBY SEM FUNDO.png" alt="Logo" style="height: 60px; width: auto" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Cadastros</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipamentos.html">Equipamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="fornecedores.html">Fornecedores</a></li>
+                <li class="nav-item"><a class="nav-link active" href="pesquisa.html">Pesquisas</a></li>
+              </ul>
+              <form class="d-flex" role="search" action="pesquisa.html" method="GET">
+                <input class="form-control me-2" type="search" name="q" placeholder="Procurar..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid mt-5 pt-5 px-4">
+        <div class="row g-4 mt-2">
+            
+            <div class="col-md-3 col-lg-2">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white fw-bold">
+                        <i class="bi bi-funnel"></i> Filtros Avançados
+                    </div>
+                    <div class="card-body">
+                        <form id="formFiltros">
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Busca por Texto</label>
+                                <input type="text" id="filtroTexto" class="form-control form-control-sm" placeholder="Nome, CPF, AD...">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Unidade</label>
+                                <select id="filtroUnidade" class="form-select form-select-sm">
+                                    <option value="">Todas</option>
+                                    <option>U20</option><option>U18</option><option>U17</option><option>U09</option>
+                                    <option>U08</option><option>U04</option><option>T97</option><option>T95</option>
+                                    <option>Bajaj - SJ</option><option>Bajaj - CG</option>
+                                    <option>AutoShop - SJ</option><option>AutoCenter - SJ</option><option>LocaBenn</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Setor</label>
+                                <select id="filtroSetor" class="form-select form-select-sm">
+                                    <option value="">Todos</option>
+                                    <option>TI</option><option>RH</option><option>VENDAS DE NOVOS</option>
+                                    <option>OFICINA</option><option>PEÇAS</option><option>CONTROLADORIA</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted">Equipamento</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="filtroNotebook">
+                                    <label class="form-check-label small" for="filtroNotebook">
+                                        Apenas com Notebook
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-sm">Aplicar Filtros</button>
+                                <button type="button" id="btnLimpar" class="btn btn-outline-secondary btn-sm">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-lg-10">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Resultados</h5>
+                        <span class="badge bg-secondary" id="contadorResultados">0 encontrados</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Foto</th>
+                                        <th>Colaborador</th>
+                                        <th>Setor/Unidade</th>
+                                        <th>Computador</th>
+                                        <th>Notebook</th> <th>Status</th>
+                                        <th class="text-end pe-4">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaCorpo">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center p-4"></footer>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/pesquisa.js"></script>
+</body>
+</html>
